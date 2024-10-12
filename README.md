@@ -15,7 +15,7 @@ Para el análisis de este proyecto se utilizó R version 4.4.1 (2024-06-14).
 
 ## Fuentes de información adicional
 
-La información adicional relacionada con la población residente y flotante de la Ciudad de México así como los polígonos georeferenciales para la construcción de los mapas se obtuvo a través de las plataformas oficiales de datos abiertos del Gobierno de la Ciudad de México. Se pueden consultar en:
+La información adicional relacionada con la población residente y flotante de la Ciudad de México, así como los polígonos georeferenciales para la construcción de los mapas se obtuvo a través de las plataformas oficiales de datos abiertos del Gobierno de la Ciudad de México y del Consejo Nacional de Población (CONAPO) de la Secretaría de Gobernación del gobierno federal. Se pueden consultar en:
 
 - link de la georeferencia de alcaldías: https://datos.cdmx.gob.mx/dataset/alcaldias
 - link de la Conapo: https://www.gob.mx/cms/uploads/attachment/file/918028/BD_municipales_portada_regiones_FINAL.pdf
