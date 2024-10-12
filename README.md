@@ -1,7 +1,7 @@
 # Emergiendo
 ## Acerca de este proyecto
 
-A través de la plataforma nacional de transparencia se realizaron solicitudes de información sobre recursos materiales, humanos y financieros a las dependencias públicas encargadas de brindar atención médica prehospitalaria en la Ciudad de México. El universo de dependencias comprende a protección civil de las 16 alcaldías, al Escuadron de Rescate y Urgencias Médicas (ERUM) de la Secretaría de Seguridad Ciudadana así como al Centro Regulador de Urgencias Médicas (SAMU-CRUM) de la Secretaría de Salud.
+A través de la Plataforma Nacional de Transparencia (INAI) se realizaron solicitudes de información sobre recursos materiales, humanos y financieros a las dependencias públicas encargadas de brindar atención médica prehospitalaria en la Ciudad de México. El universo de dependencias comprende a protección civil de las 16 alcaldías, al Escuadron de Rescate y Urgencias Médicas (ERUM) de la Secretaría de Seguridad Ciudadana así como al Centro Regulador de Urgencias Médicas (SAMU-CRUM) de la Secretaría de Salud.
 
 Con base en las respuestas obtenidas se creó la tabla "Base_cruda_prehospital" que contiene la sístesis de las respuestas que brindaron las dependiencias al respecto de sus recursos materias (ambulancias) así como humanos (personal), estratificados en sus correspondientes niveles resolutivos.
 
