@@ -7,9 +7,9 @@ Con base en las respuestas obtenidas se creó la tabla "Base_cruda_prehospital" 
 
 En el siguiente link: https://drive.google.com/drive/folders/1kPa0QS81BazwfcJ3YeO4TtAJKNRu_JdD?usp=drive_link se podrán consultar los oficios de respuesta por dependencia. 
 
-## Fuentes de información:
+## Fuentes de información adicional:
 
-La información relacionada con 
+La información adicional relacionada a la población residente y flotante de la Ciudad de México así como los polígonos georeferenciales para la construcción de los mapas se obtuvo a través de las plataformas oficiales de datos abiertos del Gobierno de la Ciudad de México. Se pueden consultar en:
 
 - link de la georeferencia de alcaldías: https://datos.cdmx.gob.mx/dataset/alcaldias
 - link de la Conapo: https://www.gob.mx/cms/uploads/attachment/file/918028/BD_municipales_portada_regiones_FINAL.pdf
