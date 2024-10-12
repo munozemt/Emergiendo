@@ -9,9 +9,9 @@ En el siguiente link: https://drive.google.com/drive/folders/1kPa0QS81BazwfcJ3Ye
 
 ## Código para reproducir los resultados
 
-Para el análisis de este proyecto se utilizó R version 4.4.1 (2024-06-14).
+Los resultados se pueden reproducir corriendo el código del script del archivo Emergiendo.R para lo cual se sugiere la utilización de RStudio Versión 2024.09.0+375 (2024.09.0+375)
 
-Se recomienda ampliamente la ejecución del código a traves de RStudio Versión 2024.09.0+375 (2024.09.0+375)
+Para el análisis de este proyecto se utilizó R version 4.4.1 (2024-06-14).
 
 ## Fuentes de información adicional
 
