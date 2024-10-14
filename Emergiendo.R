@@ -106,8 +106,7 @@ personal_ambulancias <- data.frame(
                "Iztacalco", "Iztapalapa", "La Magdalena Contreras", 
                "Miguel Hidalgo", "Milpa Alta", "Tláhuac", "Tlalpan", 
                "Venustiano Carranza", "Xochimilco"),
-  Ambulancias = c(12, 6, 11, 5, 7, 9, 13, 4, 22, 6, 10, 5, 5, 6, 3, 3),
-  Personal = c(162, 99, 32, 147, 81, 178, 263, 24, 61, 49, 127, 43, 74, 136, 23, 75)
+  Ambulancias = c(12, 6, 11, 5, 7, 9, 13, 4, 22, 6, 10, 5, 5, 6, 3, 3)
 )
 
 # Unión de población total y poligonos georreferenciados
@@ -116,10 +115,9 @@ base_análisis <- poblacion_total %>%
   left_join(geojson %>% select(NOMGEO, geometry), by = c("Alcaldía" = "NOMGEO")) %>%
   left_join(personal_ambulancias, by = "Alcaldía")
 
-# Tasas de ambulancias y personal por cada 100,000 habitantes. 
+# Tasas de ambulancias por cada 100,000 habitantes. 
 
 base_análisis$tasa_ambulancia <- (base_análisis$Ambulancias / base_análisis$POB_TOTAL) * 100000
-base_análisis$tasa_personal <- (base_análisis$Personal / base_análisis$POB_TOTAL) * 100000
 
 # Mapas de calor 
 
@@ -144,23 +142,6 @@ mapa_amb <- ggplot(data = base_análisis) +
     panel.grid.minor = element_blank()   
   )
 
-mapa_per <- ggplot(data = base_análisis) +
-  geom_sf(aes(fill = tasa_personal), color = "black") +
-  scale_fill_gradient(low = "lightblue", high = "darkblue", name = "Tasa de Personal") +
-  geom_sf_text(aes(label = round(tasa_personal, 2)), size = 3, color = "white") +
-  theme_minimal() +
-  labs(title = "Tasa de personal por cada 100,000 habitantes en CDMX") +
-  theme(
-    legend.position = "bottom",
-    axis.title.x = element_blank(),  
-    axis.title.y = element_blank(),  
-    axis.text.x = element_blank(),   
-    axis.text.y = element_blank(),   
-    axis.ticks = element_blank(),    
-    panel.grid.major = element_blank(),  
-    panel.grid.minor = element_blank()   
-  )
-
 # Tabla de tasa de ambulancias por cada 100,000 habitantes
 
 tasa_amb <- base_análisis %>%
@@ -173,21 +154,8 @@ tabla_tasa_amb <- tasa_amb %>%
   kable(format = "html", table.attr = "style='width:100%;'") %>%
   kable_styling(bootstrap_options = c("striped", "hover", "condensed"), full_width = FALSE)
 
-# Tabla de tasa de personal por cada 100,000 habitantes
-
-tasa_per <- base_análisis %>%
-  as.data.frame() %>%  
-  select(Alcaldía, tasa_personal) %>%
-  mutate(tasa_personal = round(tasa_personal, 2)) %>%
-  rename(`Tasa personal` = tasa_personal)
-
-tabla_tasa_per <- tasa_per %>%
-  kable(format = "html", table.attr = "style='width:100%;'") %>%
-  kable_styling(bootstrap_options = c("striped", "hover", "condensed"), full_width = FALSE)
-
 # Impresión de mapas y tablas
 
 mapa_amb
-mapa_per
 tabla_tasa_amb
-tabla_tasa_per
+
