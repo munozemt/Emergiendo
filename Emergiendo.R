@@ -48,13 +48,17 @@ porcentajes_personal <- data.frame(
   ), 2)
 )
 
-# Tablas con porcentajes de ambulancias y proveedores por nivel
+# Creación de tablas de personal y ambulancias
 
-kable(porcentajes_ambulancias, format = "html") %>%
-  kable_styling(full_width = F, bootstrap_options = c("striped", "hover", "condensed"))
+personal <- Base_cruda_prehospital %>%
+  select(-`Ambulancias básicas`, -`Ambulancias avanzadas`, -`Primer contacto`, -`Ambulancias de terapia intensiva`, -`Ambulancias`) %>%
+  rename(Total = Personal) %>%
+  mutate(across(everything(), ~ ifelse(. == 0, "-", .)))
 
-kable(porcentajes_personal, format = "html") %>%
-  kable_styling(full_width = F, bootstrap_options = c("striped", "hover", "condensed"))
+ambulancias <- Base_cruda_prehospital %>%
+  select(`Dependencia`, `Ambulancias básicas`, `Ambulancias avanzadas`, `Ambulancias de terapia intensiva`, `Ambulancias`) %>%
+  rename(Total = Ambulancias) %>%
+  mutate(across(everything(), ~ ifelse(. == 0, "-", .)))
 
 # Estimación de población (residentes) por alcaldía para el año 2024
 
@@ -155,6 +159,22 @@ tabla_tasa_amb <- tasa_amb %>%
   kable_styling(bootstrap_options = c("striped", "hover", "condensed"), full_width = FALSE)
 
 # Impresión de mapas y tablas
+
+# Tablas con porcentajes de ambulancias y proveedores por nivel
+
+kable(porcentajes_ambulancias, format = "html") %>%
+  kable_styling(full_width = F, bootstrap_options = c("striped", "hover", "condensed"))
+
+kable(porcentajes_personal, format = "html") %>%
+  kable_styling(full_width = F, bootstrap_options = c("striped", "hover", "condensed"))
+
+kable(personal, format = "html") %>%
+  kable_styling(full_width = F, bootstrap_options = c("striped", "hover", "condensed")) %>%
+  column_spec(1:ncol(personal), width = "auto", extra_css = "text-align: center;")
+
+kable(ambulancias, format = "html") %>%
+  kable_styling(full_width = F, bootstrap_options = c("striped", "hover", "condensed")) %>%
+  column_spec(1:ncol(ambulancias), extra_css = "text-align: center;")
 
 mapa_amb
 tabla_tasa_amb
