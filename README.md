@@ -13,7 +13,7 @@ Los resultados se pueden reproducir corriendo el código contenido en el script 
 
 Para el análisis de este proyecto se utilizó R version 4.4.1 (2024-06-14).
 
-## Fuentes de información adicional
+## Fuentes adicionales de información 
 
 La información adicional relacionada con la población residente y flotante de la Ciudad de México, así como los polígonos georeferenciales para la construcción de los mapas se obtuvo a través de las plataformas oficiales de datos abiertos del Gobierno de la Ciudad de México y del Consejo Nacional de Población (CONAPO) de la Secretaría de Gobernación del Gobierno Federal. Se pueden consultar en:
 
